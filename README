@@ -1,0 +1,54 @@
+README
+-----
+This sample project takes two dates as input parameters from the sample data file (srs/main/resources/sampledata) 
+and gives output as how many days between two dates.
+
+
+System requirements
+-------------------
+
+1. JDK 1.8
+2. Maven Build tool (3.X.X)
+
+
+Compiling project
+----------------
+Change directory path to the "IOOF_Coding_Challenge" folder location and run as;
+#mvn clean install
+
+Above will build the project.
+
+Run program
+------------
+Change directory path to the "target" folder location and run as;
+
+#java -jar com.ioof.proj-1.0-jar-with-dependencies.jar
+
+you will see output like;
+
+Earliest Date : 10 12 1989 Latest Date : 10 12 1990 Difference : 365 days
+Earliest Date : 10 11 1989 Latest Date : 09 12 1989 Difference : 29 days
+Earliest Date : 12 12 1989 Latest Date : 12 12 1989 Difference : 0 days
+Earliest Date : 15 05 2000 Latest Date : 16 05 2000 Difference : 1 days
+
+
+TestCases
+---------
+
+Test scenarios are added as Junit tests.(src/test/java/DateDiffTest.java)
+
+Cases attended
+---------------
+
+1.Error cases
+	a)If any of the date contains letters(eg:AA 11 1989)
+	b)If any of the date contains other format(eg: 21:11:1989)
+	c)If the latest date is smaller than earliest date
+	
+2. Success cases
+
+	a)date, month ,year all three parameters greater than earliest date. (eg: "10 08 1989", "15 10 1990")
+	b)year is greater in latestDate (eg: "10 08 1989", "09 07 1990")
+	c)month is greater in latestDate (eg: "10 08 1989", "10 09 1989")
+	d)day is greater in latestDate (eg: "10 08 1989", "11 08 1989")
+	e) equal dates(eg:"10 08 1989", "10 08 1989")
